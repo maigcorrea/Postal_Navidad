@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Berkshire+Swash&display=swap');
 body{
-    background-color: red;
+    background-color: rgb(146, 18, 18);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
     overflow: hidden;
+    cursor:url(./img/christmas_tree_PNG12.png),auto;
 }
 
 button{
@@ -36,8 +37,8 @@ button{
 }
 
 /* MENSAJE */
-.mensaje{
-    font-size: 100px; 
+.mensaje, .slogan{
+    font-size: 80px; 
     font-family: "Almendra", serif;
     font-weight: 700;
     font-style: normal;
@@ -45,11 +46,75 @@ button{
 }
 
 .feliz{
-    margin-bottom: 0;
+    margin: 0;
+    font-family: monospace;
+    white-space:nowrap;
+    border-right: 7px solid;
+    width: 14ch;
+    animation:blink 0.5s infinite step-end alternate, escritura 2s steps(14);
+    overflow: hidden;
+    display: inline-block; /* Necesario para respetar el centrado */
 }
 
-.eag{
-    margin-top: 0;
+
+.eag_slogan{
+  margin: 0;
+  font-family: monospace;
+  border-right: 7px solid;
+  white-space:nowrap;
+  width: 33ch;
+  animation:blink 0.5s infinite step-end alternate, escritura2 5s steps(33) 2.5s forwards;
+  overflow: hidden;
+  opacity: 0;
+  display: inline-block; /*Necesario para respetar el centrado*/
+}
+
+
+@keyframes blink{
+  50%{border-color: transparent;}
+}
+
+@keyframes escritura{
+  from{
+    width: 0;
+    
+  }
+}
+
+@keyframes escritura2{
+  from{
+    width: 0;
+    opacity: 1;
+  }to{
+    opacity: 1;
+  }
+}
+
+@keyframes opacidad{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.container.show {
+  margin-left: 80px;
+  opacity: 0;
+  display: flex; /* Cambiar a display: flex cuando la animación termine */
+  animation:opa linear 0.5s forwards;
+}
+
+@keyframes opa{
+  from{
+    opacity:0;
+  }to{
+    opacity:1;
+  }
 }
 
 
