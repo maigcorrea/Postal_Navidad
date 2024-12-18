@@ -848,3 +848,12 @@ button{
   }
   
   
+
+
+  .boton{
+    display: none;
+  }
+
+  .botonSi{
+    display: block;
+  }
